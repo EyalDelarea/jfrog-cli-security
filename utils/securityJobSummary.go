@@ -46,7 +46,7 @@ func RecordSecurityCommandOutput(content ScanCommandSummaryResult) (err error) {
 }
 
 func (scs *SecurityCommandsSummary) CreateSummaryMarkdown(content any, section jobsummaries.MarkdownSection) error {
-	return jobsummaries.CreatSummaryMarkdownBaseImpl(content, section, scs.AppendResultObject, scs.RenderContentToMarkdown)
+	return jobsummaries.CreateSummaryMarkdownBaseImpl(content, section, scs.AppendResultObject, scs.RenderContentToMarkdown)
 }
 
 func (scs *SecurityCommandsSummary) AppendResultObject(output interface{}, previousObjects []byte) (result []byte, err error) {
