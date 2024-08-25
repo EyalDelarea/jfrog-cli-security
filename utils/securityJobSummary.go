@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/jfrog/gofrog/datastructures"
-	"github.com/jfrog/jfrog-cli-core/v2/commandsummary"
+	"github.com/jfrog/jfrog-cli-core/v2/artifactory/utils/commandsummary"
 	"github.com/jfrog/jfrog-cli-core/v2/utils/coreutils"
 	"github.com/jfrog/jfrog-cli-security/formats"
 	"github.com/jfrog/jfrog-cli-security/formats/sarifutils"
@@ -39,6 +39,18 @@ type SecurityCommandsSummary struct {
 	ScanCommands      []formats.SummaryResults `json:"scanCommands"`
 	AuditCommands     []formats.SummaryResults `json:"auditCommands"`
 	CurationCommands  []formats.SummaryResults `json:"curationCommands"`
+}
+
+func (scs *SecurityCommandsSummary) SetExtendedSummary(value bool) {
+	return
+}
+
+func (scs *SecurityCommandsSummary) GetExtendedSummary() bool {
+	return false
+}
+
+func (scs *SecurityCommandsSummary) GetSummaryTitle() string {
+	return "🔒 Security Summary"
 }
 
 // Manage the job summary for security commands
